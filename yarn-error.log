@@ -39,7 +39,7 @@ npm manifest:
       "Other"
     ],
     "activationEvents": [
-      "onCommand:qwerty-learner.Start",
+      "onCommand:qwerty.Start",
       "onCommand:qwerty-learner.changeChapter",
       "onCommand:qwerty-learner.changeDict"
     ],
@@ -47,7 +47,7 @@ npm manifest:
     "contributes": {
       "commands": [
         {
-          "command": "qwerty-learner.Start",
+          "command": "qwerty.Start",
           "title": "Qwerty Learner Start/Pause"
         },
         {
@@ -61,7 +61,7 @@ npm manifest:
       ],
       "keybindings": [
         {
-          "command": "qwerty-learner.Start",
+          "command": "qwerty.Start",
           "key": "ctrl+f1",
           "mac": "ctrl+shift+q",
           "when": "editorTextFocus"

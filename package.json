@@ -1,20 +1,16 @@
 {
-  "name": "qwerty-learner",
-  "displayName": "Qwerty Learner",
-  "description": "为 Coder 设计的单词记忆与英语肌肉记忆锻炼软件 摸🐟版",
+  "name": "qwerty",
+  "displayName": "Qwerty",
+  "description": "q",
   "version": "0.0.9",
-  "publisher": "kaiyi",
+  "publisher": "k",
   "icon": "docs/logo.png",
   "engines": {
     "vscode": "^1.53.0"
   },
   "license": "MIT",
   "keywords": [
-    "英语",
-    "单词",
-    "记忆",
-    "打字",
-    "摸鱼"
+    "记忆"
   ],
   "categories": [
     "Other"
@@ -28,7 +24,7 @@
   },
   "homepage": "https://github.com/Kaiyiwing/qwerty-learner-vscode",
   "activationEvents": [
-    "onCommand:qwerty-learner.Start",
+    "onCommand:qwerty.Start",
     "onCommand:qwerty-learner.changeChapter",
     "onCommand:qwerty-learner.changeDict"
   ],
@@ -36,21 +32,21 @@
   "contributes": {
     "commands": [
       {
-        "command": "qwerty-learner.Start",
-        "title": "Qwerty Learner Start/Pause"
+        "command": "qwerty.Start",
+        "title": "FastCode Start/Pause"
       },
       {
         "command": "qwerty-learner.changeChapter",
-        "title": "Qwerty Learner Change Chapter"
+        "title": "FastCode CC"
       },
       {
         "command": "qwerty-learner.changeDict",
-        "title": "Qwerty Learner Change Dictionary"
+        "title": "FastCode CD"
       }
     ],
     "keybindings": [
       {
-        "command": "qwerty-learner.Start",
+        "command": "qwerty.Start",
         "key": "shift+alt+q",
         "mac": "ctrl+shift+q",
         "when": "editorTextFocus"

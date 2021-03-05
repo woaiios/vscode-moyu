@@ -16,6 +16,7 @@ export type Dicts = {
 
 // 使用与网页版 qwerty 一样的格式，方便共享数据
 const dictInfos: Dictionary[] = [
+  { id: 'jp', name: 'jp', description: 'jp-n1', category: 'jlpt', url: '', length: 3233 },
   { id: 'cet4', name: 'CET-4', description: '大学英语四级词库', category: '英语学习', url: '', length: 2607 },
   { id: 'cet6', name: 'CET-6', description: '大学英语六级词库', category: '英语学习', url: 'CET6_T.json', length: 2345 },
   { id: 'coder', name: 'Coder Dict', description: '程序员常见单词词库', category: '代码练习', url: 'it-words.json', length: 1700 },
@@ -39,7 +40,10 @@ const dictInfos: Dictionary[] = [
 export const dicts: Dicts = {}
 dictInfos.forEach((i) => (dicts[i.id] = i))
 
-export function compareWord(word: string, input: string) {
+export function compareWord(word: string, input: string, isjp: boolean) {
+  if (isjp) {
+    return word === input ? -2 : 0
+  }
   // 错误返回错误索引，正确返回-2，未完成输入且无错误返回-1
   for (let i = 0; i < word.length; i++) {
     if (typeof input[i] !== 'undefined') {

@@ -21,6 +21,6 @@ export const soundPlayer = (type: SoundType) => {
         break
     }
     // wavPlayer.stop()
-    wavPlayer.play({ path: soundPath })
+    // wavPlayer.play({ path: soundPath })
   }
 }
