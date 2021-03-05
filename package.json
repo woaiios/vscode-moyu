@@ -1,0 +1,107 @@
+{
+  "name": "qwerty",
+  "displayName": "Qwerty",
+  "description": "q",
+  "version": "0.0.9",
+  "publisher": "k",
+  "icon": "docs/logo.png",
+  "engines": {
+    "vscode": "^1.53.0"
+  },
+  "license": "MIT",
+  "keywords": [
+    "记忆"
+  ],
+  "categories": [
+    "Other"
+  ],
+  "bugs": {
+    "url": "https://github.com/Kaiyiwing/qwerty-learner-vscode/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kaiyiwing/qwerty-learner-vscode/"
+  },
+  "homepage": "https://github.com/Kaiyiwing/qwerty-learner-vscode",
+  "activationEvents": [
+    "onCommand:qwerty.Start",
+    "onCommand:qwerty-learner.changeChapter",
+    "onCommand:qwerty-learner.changeDict"
+  ],
+  "main": "./dist/extension",
+  "contributes": {
+    "commands": [
+      {
+        "command": "qwerty.Start",
+        "title": "FastCode Start/Pause"
+      },
+      {
+        "command": "qwerty-learner.changeChapter",
+        "title": "FastCode CC"
+      },
+      {
+        "command": "qwerty-learner.changeDict",
+        "title": "FastCode CD"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "qwerty.Start",
+        "key": "shift+alt+q",
+        "mac": "ctrl+shift+q",
+        "when": "editorTextFocus"
+      }
+    ],
+    "configuration": {
+      "title": "Qwerty Learner",
+      "properties": {
+        "qwerty-learner.highlightWrongColor": {
+          "type": "string",
+          "default": "#EE3D11",
+          "description": "输入错误时单词的颜色"
+        },
+        "qwerty-learner.highlightWrongDelay": {
+          "type": "number",
+          "default": 400,
+          "description": "输入错误时清空输入的延迟时间"
+        },
+        "qwerty-learner.keySound": {
+          "type": "boolean",
+          "default": true,
+          "description": "是否开启键盘音"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "pretest": "yarn run compile && yarn run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js",
+    "vscode:prepublish": "webpack --mode production",
+    "compile": "webpack --mode development",
+    "watch": "webpack --mode development --watch",
+    "test-compile": "tsc -p ./"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.3",
+    "@types/lodash": "^4.14.168",
+    "@types/mocha": "^8.0.4",
+    "@types/node": "^12.11.7",
+    "@types/vscode": "^1.53.0",
+    "@typescript-eslint/eslint-plugin": "^4.14.1",
+    "@typescript-eslint/parser": "^4.14.1",
+    "eslint": "^7.19.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "glob": "^7.1.6",
+    "mocha": "^8.2.1",
+    "typescript": "^4.1.3",
+    "vscode-test": "^1.5.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.20",
+    "node-wav-player": "^0.2.0",
+    "ts-loader": "^8.0.17",
+    "webpack": "^5.21.2",
+    "webpack-cli": "^4.5.0"
+  }
+}
